@@ -1,17 +1,16 @@
 <template>
   <section class="container mx-auto">
     <div>
-      <logo/>
       <h1 class="title">checkthis</h1>
       <h2 class="subtitle">My kickass Nuxt.js project</h2>
       <div class="links">
-        <a 
-          href="https://nuxtjs.org/" 
-          target="_blank" 
+        <a
+          href="https://nuxtjs.org/"
+          target="_blank"
           class="button--green">Documentation</a>
-        <a 
-          href="https://github.com/nuxt/nuxt.js" 
-          target="_blank" 
+        <a
+          href="https://github.com/nuxt/nuxt.js"
+          target="_blank"
           class="button--grey">GitHub</a>
       </div>
     </div>
@@ -19,11 +18,32 @@
 </template>
 
 <script>
-import Logo from "~/components/Logo.vue";
+import axios from 'axios'
+import { mapState } from 'vuex'
 
 export default {
-  components: {
-    Logo
+  computed: {
+    ...mapState(['posts', 'comments', 'albums', 'photos', 'todos', 'users'])
+  },
+  async fetch ({ store, params }) {
+    await axios.get('https://jsonplaceholder.typicode.com/posts').then(data => {
+      store.commit('setPosts', data)
+    })
+    await axios.get('https://jsonplaceholder.typicode.com/comments').then(data => {
+      store.commit('setComments', data)
+    })
+    await axios.get('https://jsonplaceholder.typicode.com/albums').then(data => {
+      store.commit('setAlbums', data)
+    })
+    await axios.get('https://jsonplaceholder.typicode.com/photos').then(data => {
+      store.commit('setPhotos', data)
+    })
+    await axios.get('https://jsonplaceholder.typicode.com/todos').then(data => {
+      store.commit('setTodos', data)
+    })
+    await axios.get('https://jsonplaceholder.typicode.com/users').then(data => {
+      store.commit('setUsers', data)
+    })
   }
 };
 </script>
