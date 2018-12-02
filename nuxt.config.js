@@ -7,7 +7,7 @@ module.exports = {
   ** Headers of the page
   */
   head: {
-    title: pkg.name,
+    title: 'Check This',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
@@ -40,7 +40,7 @@ module.exports = {
   */
   css: [
     '~/assets/css/tailwind.css',
-    'assets/scss/main.scss',
+    '~/assets/scss/main.scss',
   ],
 
   /*
@@ -57,7 +57,16 @@ module.exports = {
     '@nuxtjs/axios',
     // https://pwa.nuxtjs.org/setup
     '@nuxtjs/pwa',
+    [
+      'nuxt-sass-resources-loader',
+      [
+        '@/assets/scss/libs/_vars.scss',
+        '@/assets/scss/libs/_mixins.scss',
+        '@/assets/scss/libs/_functions.scss'
+      ]
+    ]
   ],
+
   /*
   ** Axios module configuration
   */

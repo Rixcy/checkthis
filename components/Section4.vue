@@ -1,7 +1,6 @@
 <template>
-  <!-- Four -->
-  <section 
-    id="four" 
+  <section
+    id="four"
     class="wrapper style1 special fade-up">
     <div class="container">
       <header class="major">
@@ -45,8 +44,8 @@
       <footer class="major">
         <ul class="actions special">
           <li>
-            <a 
-              href="#" 
+            <a
+              href="#"
               class="button">Magna sed feugiat</a>
           </li>
         </ul>

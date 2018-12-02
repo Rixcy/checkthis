@@ -24,14 +24,13 @@ $size: (
 // Font.
 $font: (
   family:				('Ubuntu', sans-serif),
-  family-fixed:		('Courier New', monospace),
-  weight:				100,
-  weight-bold:		300
+  weight:				400,
+  weight-bold:		700
 );
 
 // Palette.
 $palette: (
-  bg:					#1c1d26,
+  bg:					#1c1d26,#24242a
   bg-transparent:		rgba(23,24,32,0.95),
   fg-bold:			#ffffff,
   fg:					rgba(255,255,255,0.75),
@@ -41,7 +40,7 @@ $palette: (
   border-bg:			rgba(255,255,255,0.075),
   border2:			rgba(255,255,255,0.5),
   border2-bg:			rgba(255,255,255,0.25),
-  accent1:			#e44c65,
+  accent1:			#af2b1e,
   accent2:			#272833,
   accent2-transparent:rgba(39,40,51,0.965),
   accent3:			#5480f1,
