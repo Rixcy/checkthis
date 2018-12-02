@@ -19,7 +19,10 @@ module.exports = {
       { rel: 'apple-touch-icon', sizes: '180x180', href: 'icons/apple-touch-icon.png' },
       { rel: 'icon', type: 'image/png', sizes: '32x32', href: 'icons/favicon-32x32.png' },
       { rel: 'icon', type: 'image/png', sizes: '16x16', href: 'icons/favicon-16x16.png' },
-    ]
+    ],
+    bodyAttrs: {
+      class: 'landed'
+    }
   },
   /*
   ** TODO: Config manifest with the following:
@@ -37,7 +40,7 @@ module.exports = {
   */
   css: [
     '~/assets/css/tailwind.css',
-    'assets/css/main.scss',
+    'assets/scss/main.scss',
   ],
 
   /*
