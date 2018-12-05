@@ -1,35 +1,13 @@
-// Misc.
-$misc: (
-  z-index-base:		10000,
-  z-index-overlay:	100000,
-  max-spotlight:		20
-);
-
-// Duration.
-$duration: (
-  navPanel:			0.5s,
-  transition:			0.2s,
-  landing-fadein:		1.5s
-);
-
-// Size.
-$size: (
-  border-radius:		4px,
-  element-height:		3em,
-  element-margin:		2em,
-  navPanel:			275px,
-  container-width:	70em
-);
-
 // Font.
 $font: (
-  family:				('Ubuntu', sans-serif),
-  weight:				400,
-  weight-bold:		700
+  family: ('Ubuntu', sans-serif),
+  weight: 400,
+  weight-bold: 700
 );
 
 // Palette.
 $palette: (
+  primary-color: #af2b1e,
   bg:					#1c1d26,#24242a
   bg-transparent:		rgba(23,24,32,0.95),
   fg-bold:			#ffffff,
