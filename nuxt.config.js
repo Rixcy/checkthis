@@ -20,6 +20,9 @@ module.exports = {
       { rel: 'icon', type: 'image/png', sizes: '32x32', href: 'icons/favicon-32x32.png' },
       { rel: 'icon', type: 'image/png', sizes: '16x16', href: 'icons/favicon-16x16.png' },
     ],
+    bodyAttrs: {
+      class: 'min-h-screen'
+    },
   },
   /*
   ** TODO: Config manifest with the following:
@@ -30,15 +33,16 @@ module.exports = {
   /*
   ** Customize the progress-bar color
   */
-  loading: '~/components/loading.vue',
+  loading: { color: '#fff' },
 
   /*
   ** Global CSS
   */
   css: [
+    'normalize.css/normalize.css',
+    '~/assets/css/tailwind.css',
     '~/assets/scss/main.scss',
-    'basscss/css/basscss.css',
-    'normalize.css/normalize.css'
+    'animate.css/animate.min.css'
   ],
 
   /*
@@ -55,12 +59,6 @@ module.exports = {
     '@nuxtjs/axios',
     // https://pwa.nuxtjs.org/setup
     '@nuxtjs/pwa',
-    [
-      'nuxt-sass-resources-loader',
-      [
-        '@/assets/scss/libs/_vars.scss',
-      ]
-    ]
   ],
 
   /*
