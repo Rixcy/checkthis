@@ -9,7 +9,7 @@
         <div class="uppercase">Primary</div>
         <div class="flex justify-between">
           <span class="mr-2">Base</span>
-          <span class="font-normal opacity-75">#E3342F</span>
+          <span class="font-normal opacity-75">#AF2b1E</span>
         </div>
       </div>
       <transition
@@ -20,31 +20,31 @@
           class="md:flex md:flex-row-reverse">
           <div class="text-primary-darkest bg-primary-lightest px-3 py-4 text-sm flex-1 font-semibold leading-tight">
             <div class="mb-2">Lightest</div>
-            <div class="font-normal opacity-75">#FCEBEA</div>
+            <div class="font-normal opacity-75">#D7958E</div>
           </div>
           <div class="text-primary-darkest bg-primary-lighter px-3 py-4 text-sm flex-1 font-semibold leading-tight">
             <div class="mb-2">Lighter</div>
-            <div class="font-normal opacity-75">#F9ACAA</div>
+            <div class="font-normal opacity-75">#C76A61</div>
           </div>
           <div class="text-white bg-primary-light px-3 py-4 text-sm flex-1 font-semibold leading-tight">
             <div class="mb-2">Light</div>
-            <div class="font-normal opacity-75">#EF5753</div>
+            <div class="font-normal opacity-75">#B74034</div>
           </div>
           <div class="text-white bg-primary px-3 py-4 text-sm flex-1 font-semibold leading-tight">
             <div class="mb-2">Base</div>
-            <div class="font-normal opacity-75">#E3342F</div>
+            <div class="font-normal opacity-75">#AF2B1E</div>
           </div>
           <div class="text-white bg-primary-dark px-3 py-4 text-sm flex-1 font-semibold leading-tight">
             <div class="mb-2">Dark</div>
-            <div class="font-normal opacity-75">#CC1F1A</div>
+            <div class="font-normal opacity-75">#9D261B</div>
           </div>
           <div class="text-white bg-primary-darker px-3 py-4 text-sm flex-1 font-semibold leading-tight">
             <div class="mb-2">Darker</div>
-            <div class="font-normal opacity-75">#621B18</div>
+            <div class="font-normal opacity-75">#7A1E15</div>
           </div>
           <div class="text-white bg-primary-darkest px-3 py-4 text-sm flex-1 font-semibold leading-tight">
             <div class="mb-2">Darkest</div>
-            <div class="font-normal opacity-75">#3B0D0C</div>
+            <div class="font-normal opacity-75">#57150F</div>
           </div>
         </div>
       </transition>

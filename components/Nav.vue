@@ -38,7 +38,7 @@
           Home
         </nuxt-link>
         <nuxt-link
-          to="elements"
+          to="/elements"
           class="block mt-4 lg:inline-block lg:mt-0 text-primary-lighter hover:text-primary-lightest no-underline">
           Elements
         </nuxt-link>
