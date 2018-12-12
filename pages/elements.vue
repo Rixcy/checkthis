@@ -13,8 +13,10 @@
         </div>
       </div>
       <transition
-        enter-active-class="animated slideInDown"
-        leave-active-class="animated slideOutUp">
+        enter-class="animated slideInDown"
+        enter-to-class="animated slideInDown"
+        leave-class="animated slideOutUp"
+        leave-to-class="animated slideOutUp">
         <div
           v-show="showPrimary"
           class="md:flex md:flex-row-reverse">
@@ -406,7 +408,7 @@ export default {
     },
     togglePurple() {
       this.showPurple = !this.showPurple
-    },
+    }
   },
 }
 </script>
