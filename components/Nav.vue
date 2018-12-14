@@ -46,9 +46,11 @@
           'border',
           'rounded',
           'text-white',
-          'border-primary-light',
-          'hover:text-primary-lightest',
-          'hover:border-white'
+          'hover:border-white',
+          { 'border-grey-light': dm },
+          { 'border-primary-light': !dm },
+          { 'hover:text-grey-lightest': dm },
+          { 'hover:text-primary-lightest': !dm }
       ]">
         <svg
           class="fill-current h-3 w-3"

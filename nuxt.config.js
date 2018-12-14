@@ -24,20 +24,9 @@ module.exports = {
       class: 'min-h-screen'
     },
   },
-  /*
-  ** TODO: Config manifest with the following:
-  ** <link rel="manifest" href="/site.webmanifest">
-  ** <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#af2b1e">
-  */
 
-  /*
-  ** Customize the progress-bar color
-  */
   loading: { color: '#fff' },
 
-  /*
-  ** Global CSS
-  */
   css: [
     'normalize.css/normalize.css',
     '~/assets/css/tailwind.css',
@@ -45,32 +34,20 @@ module.exports = {
     'animate.css/animate.min.css'
   ],
 
-  /*
-  ** Plugins to load before mounting the App
-  */
   plugins: [
+    '~/plugins/fireauth.js'
   ],
 
-  /*
-  ** Nuxt.js modules
-  */
   modules: [
-    // https://github.com/nuxt-community/axios-module#usage
     '@nuxtjs/axios',
-    // https://pwa.nuxtjs.org/setup
     '@nuxtjs/pwa',
+    '@nuxtjs/dotenv'
   ],
 
-  /*
-  ** Axios module configuration
-  */
   axios: {
     // See https://github.com/nuxt-community/axios-module#options
   },
 
-  /*
-  ** Build configuration
-  */
   build: {
     /*
     ** You can extend webpack config here
@@ -86,5 +63,9 @@ module.exports = {
         })
       }
     }
+  },
+
+  transition: {
+    name: 'fade'
   }
 }
