@@ -19,6 +19,10 @@ module.exports = {
       { rel: 'apple-touch-icon', sizes: '180x180', href: 'icons/apple-touch-icon.png' },
       { rel: 'icon', type: 'image/png', sizes: '32x32', href: 'icons/favicon-32x32.png' },
       { rel: 'icon', type: 'image/png', sizes: '16x16', href: 'icons/favicon-16x16.png' },
+      { rel: 'stylesheet', href: 'https://use.fontawesome.com/releases/v5.3.1/css/all.css' }
+    ],
+    script: [
+      { src: 'https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.min.js' }
     ],
     bodyAttrs: {
       class: 'min-h-screen'
@@ -63,9 +67,5 @@ module.exports = {
         })
       }
     }
-  },
-
-  transition: {
-    name: 'fade'
   }
 }

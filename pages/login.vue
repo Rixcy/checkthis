@@ -9,7 +9,7 @@
     </transition>
     <div class="w-full max-w-sm mx-auto">
       <h1 class="pb-10">Log In</h1>
-      <transition name="fade">
+      <transition name="fades">
         <form
           v-if="showLoginForm"
           class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4"
@@ -60,7 +60,7 @@
           </div>
         </form>
       </transition>
-      <transition name="fade">
+      <transition name="fades">
         <form
           v-if="showForgotPassword"
           class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4"
@@ -96,6 +96,20 @@
     </div>
   </div>
 </template>
+
+<style>
+.fades-enter-active,
+.fades-leave-active {
+  transition-duration: 0.3s;
+  transition-property: opacity;
+  transition-timing-function: ease;
+}
+
+.fades-enter,
+.fades-leave-active {
+  opacity: 0
+}
+</style>
 
 <script>
 export default {
