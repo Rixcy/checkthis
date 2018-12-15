@@ -1,18 +1,17 @@
 <template>
   <div class="container mx-auto p-10">
-    <transition name="fade">
-      <div
-        v-if="performingRequest"
-        class="loading">
-        <p>Loading...</p>
-      </div>
-    </transition>
     <div class="w-full max-w-sm mx-auto">
       <h1 class="pb-10">Log In</h1>
-      <transition name="fades">
+      <div class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
+        <transition name="fade">
+          <div
+            v-if="performingRequest"
+            class="loading">
+            <p>Loading...</p>
+          </div>
+        </transition>
         <form
-          v-if="showLoginForm"
-          class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4"
+          v-if="showLoginForm && !passwordResetSuccess"
           @submit.prevent>
           <div class="mb-4">
             <label
@@ -36,6 +35,7 @@
             </label>
             <input
               id="passwordLogin"
+              v-model.trim="loginForm.password"
               class="shadow appearance-none border rounded w-full py-2 px-3 text-grey-darker mb-3 leading-tight focus:outline-none focus:shadow-outline"
               type="password"
               placeholder="**********">
@@ -59,11 +59,8 @@
             </a>
           </div>
         </form>
-      </transition>
-      <transition name="fades">
         <form
-          v-if="showForgotPassword"
-          class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4"
+          v-if="showForgotPassword && !passwordResetSuccess"
           @submit.prevent>
           <div class="mb-4">
             <label
@@ -88,30 +85,32 @@
             </button>
           </div>
         </form>
-      </transition>
-      <p class="text-center text-grey text-xs">
-        <a @click="togglePasswordReset">Back to Log In</a> |
-        Sign in with <a @click="googleSignIn">Google</a>
+        <div
+          v-if="passwordResetSuccess"
+          class="text-center">
+          <h2>Email Sent</h2>
+          <span class="text-green-light">Check your email for a link to reset your password</span>
+        </div>
+      </div>
+      <p
+        :class="[
+          'text-center',
+          'text-xs',
+          { 'text-blue-darker': darkMode },
+          { 'text-primary': !darkMode }
+      ]">
+        <strong>
+          <a @click="togglePasswordReset">Back to Log In</a> |
+          Sign in with <a @click="googleSignIn">Google</a>
+        </strong>
       </p>
     </div>
   </div>
 </template>
 
-<style>
-.fades-enter-active,
-.fades-leave-active {
-  transition-duration: 0.3s;
-  transition-property: opacity;
-  transition-timing-function: ease;
-}
-
-.fades-enter,
-.fades-leave-active {
-  opacity: 0
-}
-</style>
-
 <script>
+import { mapState } from 'vuex'
+
 export default {
   data () {
     return {
@@ -134,6 +133,9 @@ export default {
       errorMsg: ''
     }
   },
+  computed: mapState([
+    'darkMode'
+  ]),
   methods: {
     toggleForm () {
       this.errorMsg = ''
@@ -155,11 +157,10 @@ export default {
       this.$store.dispatch('signInWithEmail', {
         email: this.loginForm.email,
         password: this.loginForm.password
-      }).then(() => {
+      }).then((data) => {
         this.performingRequest = false
         this.$router.push('/')
       }).catch(err => {
-        console.log(err)
         this.performingRequest = false
         this.errorMsg = err.message
       })
@@ -171,7 +172,6 @@ export default {
         this.performingRequest = false
         this.$router.push('/')
       }).catch(err => {
-        console.log(err)
         this.performingRequest = false
         this.errorMsg = err.message
       })
@@ -211,9 +211,8 @@ export default {
       this.$store.dispatch('sendPasswordResetEmail', this.resetForm.email).then(() => {
         this.performingRequest = false
         this.passwordResetSuccess = true
-        this.passwordForm.email = ''
+        this.resetForm.email = ''
       }).catch(err => {
-        console.log(err)
         this.performingRequest = false
         this.errorMsg = err.message
       })

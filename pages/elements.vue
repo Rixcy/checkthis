@@ -98,50 +98,6 @@
     <div
       class="relative my-8 overflow-hidden rounded shadow-md1">
       <div
-        class="relative shadow bg-orange text-orange-darkest px-3 py-4 md:py-1 text-sm font-semibold flex justify-between"
-        @click="toggleOrange">
-        <div class="uppercase">Orange</div>
-        <div class="flex justify-between">
-          <span class="mr-2">Base</span>
-          <span class="font-normal opacity-75">#F6993F</span>
-        </div>
-      </div>
-      <div
-        v-show="showOrange"
-        class="md:flex md:flex-row-reverse">
-        <div class="text-orange-darkest bg-orange-lightest px-3 py-4 text-sm flex-1 font-semibold leading-tight">
-          <div class="mb-2">Lightest</div>
-          <div class="font-normal opacity-75">#FFF5EB</div>
-        </div>
-        <div class="text-orange-darkest bg-orange-lighter px-3 py-4 text-sm flex-1 font-semibold leading-tight">
-          <div class="mb-2">Lighter</div>
-          <div class="font-normal opacity-75">#FCD9B6</div>
-        </div>
-        <div class="text-orange-darkest bg-orange-light px-3 py-4 text-sm flex-1 font-semibold leading-tight">
-          <div class="mb-2">Light</div>
-          <div class="font-normal opacity-75">#FAAD63</div>
-        </div>
-        <div class="text-orange-darkest bg-orange px-3 py-4 text-sm flex-1 font-semibold leading-tight">
-          <div class="mb-2">Base</div>
-          <div class="font-normal opacity-75">#F6993F</div>
-        </div>
-        <div class="text-white bg-orange-dark px-3 py-4 text-sm flex-1 font-semibold leading-tight">
-          <div class="mb-2">Dark</div>
-          <div class="font-normal opacity-75">#DE751F</div>
-        </div>
-        <div class="text-white bg-orange-darker px-3 py-4 text-sm flex-1 font-semibold leading-tight">
-          <div class="mb-2">Darker</div>
-          <div class="font-normal opacity-75">#613B1F</div>
-        </div>
-        <div class="text-white bg-orange-darkest px-3 py-4 text-sm flex-1 font-semibold leading-tight">
-          <div class="mb-2">Darkest</div>
-          <div class="font-normal opacity-75">#462A16</div>
-        </div>
-      </div>
-    </div>
-    <div
-      class="relative my-8 overflow-hidden rounded shadow-md1">
-      <div
         class="relative shadow bg-yellow text-yellow-darkest px-3 py-4 md:py-1 text-sm font-semibold flex justify-between"
         @click="toggleYellow">
         <div class="uppercase">Yellow</div>

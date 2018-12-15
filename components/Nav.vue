@@ -9,8 +9,8 @@
       'shadow',
       'rounded-t-lg',
       'text-white',
-      { 'bg-primary': !dm },
-      { 'bg-blue-darker': dm }
+      { 'bg-primary': !darkMode },
+      { 'bg-blue-darker': darkMode }
   ]">
     <div class="sm:w-full md:w-1/4">
       <div class="flex items-center">
@@ -42,76 +42,94 @@
       </div>
     </div>
     <div class="flex sm:w-full md:w-1/2 items-center justify-center">
-      <a
+      <nuxt-link
+        :exact-active-class="darkMode ? 'bg-blue-dark' : 'bg-primary-light'"
         :class="[
           'mx-2',
           'p-6',
-          'shadow',
-          { 'bg-blue-dark': dm },
-          { 'bg-primary-light': !dm },
+          'hover:shadow',
+          { 'hover:bg-blue-dark': darkMode },
+          { 'hover:bg-primary-light': !darkMode },
           'rounded-lg'
         ]"
+        to="/"
         href="#"
-        title="Home"><i class="fas fa-th text-white"/></a>
+        title="Home"><i class="fas fa-home text-white"/></nuxt-link>
       <a
         :class="[
           'mx-2',
           'p-6',
           'rounded-lg',
           'hover:shadow',
-          { 'hover:bg-blue-dark': dm },
-          { 'hover:bg-primary-light': !dm }
+          { 'hover:bg-blue-dark': darkMode },
+          { 'hover:bg-primary-light': !darkMode }
         ]"
         href="#"
         title="Users"><i class="fas fa-users text-grey-lighter"/></a>
-      <a
+      <nuxt-link
+        :exact-active-class="darkMode ? 'bg-blue-dark' : 'bg-primary-light'"
         :class="[
           'mx-2',
           'p-6',
           'rounded-lg',
           'hover:shadow',
-          { 'hover:bg-blue-dark': dm },
-          { 'hover:bg-primary-light': !dm }
+          { 'hover:bg-blue-dark': darkMode },
+          { 'hover:bg-primary-light': !darkMode }
         ]"
-        href="#"
-        title="Posts"><i class="fas fa-file text-grey-lighter"/></a>
+        to="/elements"
+        title="Elements"><i class="fas fa-th text-grey-lighter"/></nuxt-link>
       <a
         :class="[
           'mx-2',
           'p-6',
           'rounded-lg',
           'hover:shadow',
-          { 'hover:bg-blue-dark': dm },
-          { 'hover:bg-primary-light': !dm }
+          { 'hover:bg-blue-dark': darkMode },
+          { 'hover:bg-primary-light': !darkMode }
         ]"
         href="#"
         title="Settings"><i class="fas fa-cog text-grey-lighter"/></a>
     </div>
     <div class="flex sm:w-full md:w-1/4 items-center justify-end">
-      <span class="mr-4 text-sm font-semibold">Rick</span>
-      <i class="fas fa-user-circle text-5xl text-white mr-4"/>
-      <a href="#"><i class="fas fa-angle-down text-grey"/></a>
+      <template v-if="userProfile">
+        <span
+          class="mr-4 text-sm font-semibold"
+          @click="$store.dispatch('signOut')">{{ userProfile.name }}</span>
+        <img
+          :src="userProfile.avatar"
+          class="mr-4 h-10 w-10 rounded-full">
+        <!-- <i class="fas fa-user-circle text-5xl text-white mr-4"/> -->
+        <a href="#"><i class="fas fa-angle-down text-grey"/></a>
+      </template>
+      <template v-else>
+        <nuxt-link
+          class="mr-4 text-sm font-semibold text-white hover:text-grey no-underline"
+          to="login">
+          Login
+        </nuxt-link>
+      </template>
     </div>
   </nav>
 </template>
 
 <script>
+import { mapState } from 'vuex'
+
 export default {
   name: 'Nav',
   data() {
     return {
-      dm: this.$store.state.darkMode
+      darkMode: this.$store.state.darkMode
     }
   },
+  computed: mapState([
+    'userProfile'
+  ]),
   methods: {
     toggleDarkMode() {
-      this.dm = !this.dm
-      this.$store.commit('setDarkMode', this.dm)
+      this.darkMode = !this.darkMode
+      this.$store.commit('setDarkMode', this.darkMode)
     }
-  },
+  }
 }
 </script>
-
-<style scoped>
-
-</style>
