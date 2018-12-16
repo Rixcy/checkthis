@@ -39,7 +39,8 @@ module.exports = {
   ],
 
   plugins: [
-    '~/plugins/fireauth.js'
+    '~/plugins/fireauth.js',
+    '~/plugins/globals.js'
   ],
 
   modules: [

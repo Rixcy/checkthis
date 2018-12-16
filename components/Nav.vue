@@ -41,8 +41,13 @@
         <span class="font-semibold text-xl tracking-tight">checkthis.space</span>
       </div>
     </div>
-    <div class="flex sm:w-full md:w-1/2 items-center justify-center">
+    <div
+      id="menu"
+      class="flex sm:w-full md:w-1/2 items-center justify-center">
       <nuxt-link
+        v-for="(item, key) in menuItems"
+        :key="key"
+        :to="item.link"
         :exact-active-class="darkMode ? 'bg-blue-dark' : 'bg-primary-light'"
         :class="[
           'mx-2',
@@ -51,44 +56,8 @@
           { 'hover:bg-blue-dark': darkMode },
           { 'hover:bg-primary-light': !darkMode },
           'rounded-lg'
-        ]"
-        to="/"
-        href="#"
-        title="Home"><i class="fas fa-home text-white"/></nuxt-link>
-      <a
-        :class="[
-          'mx-2',
-          'p-6',
-          'rounded-lg',
-          'hover:shadow',
-          { 'hover:bg-blue-dark': darkMode },
-          { 'hover:bg-primary-light': !darkMode }
-        ]"
-        href="#"
-        title="Users"><i class="fas fa-users text-grey-lighter"/></a>
-      <nuxt-link
-        :exact-active-class="darkMode ? 'bg-blue-dark' : 'bg-primary-light'"
-        :class="[
-          'mx-2',
-          'p-6',
-          'rounded-lg',
-          'hover:shadow',
-          { 'hover:bg-blue-dark': darkMode },
-          { 'hover:bg-primary-light': !darkMode }
-        ]"
-        to="/elements"
-        title="Elements"><i class="fas fa-th text-grey-lighter"/></nuxt-link>
-      <a
-        :class="[
-          'mx-2',
-          'p-6',
-          'rounded-lg',
-          'hover:shadow',
-          { 'hover:bg-blue-dark': darkMode },
-          { 'hover:bg-primary-light': !darkMode }
-        ]"
-        href="#"
-        title="Settings"><i class="fas fa-cog text-grey-lighter"/></a>
+      ]"><i :class="[item.icon, 'text-white']"/>
+      </nuxt-link>
     </div>
     <div class="flex sm:w-full md:w-1/4 items-center justify-end">
       <template v-if="userProfile">
@@ -119,7 +88,14 @@ export default {
   name: 'Nav',
   data() {
     return {
-      darkMode: this.$store.state.darkMode
+      darkMode: this.$store.state.darkMode,
+      menuItems: [
+        { name: 'Home', icon: 'fas fa-home', link: '/' },
+        { name: 'Users', icon: 'fas fa-users', link: '/users' },
+        { name: 'Elements', icon: 'fas fa-th', link: '/elements' },
+        { name: 'Crypto', icon: 'fab fa-bitcoin', link: '/crypto' },
+        { name: 'Settings', icon: 'fas fa-cog', link: '/settings' }
+      ]
     }
   },
   computed: mapState([
@@ -133,3 +109,9 @@ export default {
   }
 }
 </script>
+
+<style>
+#menu a {
+  transition: all 0.4s ease-in-out;
+}
+</style>

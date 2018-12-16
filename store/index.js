@@ -6,7 +6,9 @@ const createStore = () => {
     state: () => ({
       darkMode: true,
       user: null,
-      userProfile: null
+      userProfile: null,
+      users: null,
+      tailwind: null
     }),
     mutations: {
       setDarkMode(state, payload) {
@@ -16,8 +18,13 @@ const createStore = () => {
         state.user = payload
       },
       setUserProfile(state, payload) {
-        console.log(payload)
         state.userProfile = payload
+      },
+      setUsers(state, payload) {
+        state.users = payload
+      },
+      setTailwindConfig(state, payload) {
+        state.tailwind = payload
       }
     },
     actions: {
@@ -54,6 +61,15 @@ const createStore = () => {
         usersCollection.doc(state.user.uid).get().then(res => {
           let data = res.data()
           commit('setUserProfile', data)
+        }).catch(err => {
+          console.log(err)
+        })
+      },
+
+      fetchUsers({ commit, state }) {
+        usersCollection.get().then(res => {
+          let data = res.data()
+          commit('setUsers', data)
         }).catch(err => {
           console.log(err)
         })

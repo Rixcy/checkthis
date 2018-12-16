@@ -2,11 +2,9 @@
   <div class="py-8 bg-cover font-sans leading-normal tracking-normal">
     <div class="container mx-auto my-8">
       <Nav/>
-
       <div
         id="main"
         :class="[
-          'p-8',
           'rounded-b-lg',
           'shadow-md',
           { 'bg-grey': darkMode },
