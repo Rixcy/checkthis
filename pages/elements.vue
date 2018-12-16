@@ -131,10 +131,7 @@ export default {
   },
   created () {
     this.$store.commit('setTailwindConfig', require('~/tailwind.js'))
-  },
-  middleware: [
-    'authenticated'
-  ],
+  }
 }
 </script>
 

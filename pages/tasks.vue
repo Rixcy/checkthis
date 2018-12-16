@@ -6,7 +6,7 @@
         <button class="float-right bg-green hover:bg-green-dark text-white text-sm font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">New Task</button>
       </h1>
       <div class="flex items-start justify-center overflow-x-scroll">
-        <div class="rounded bg-grey-light flex-no-shrink w-64 p-2 mr-3">
+        <div class="rounded bg-grey-light flex-no-shrink w-64 p-2 mr-3 mb-2">
           <div class="flex justify-between py-1">
             <h3 class="text-sm">New landing page</h3>
             <svg
@@ -41,7 +41,7 @@
             <p class="mt-3 text-grey-dark">Add a card...</p>
           </div>
         </div>
-        <div class="rounded bg-grey-light flex-no-shrink w-64 p-2 mr-3">
+        <div class="rounded bg-grey-light flex-no-shrink w-64 p-2 mr-3 mb-2">
           <div class="flex justify-between py-1">
             <h3 class="text-sm">Old landing</h3>
             <svg
@@ -75,7 +75,7 @@
             <p class="mt-3 text-grey-dark">Add a card...</p>
           </div>
         </div>
-        <div class="rounded bg-grey-light flex-no-shrink w-64 p-2 mr-3">
+        <div class="rounded bg-grey-light flex-no-shrink w-64 p-2 mr-3 mb-2">
           <div class="flex justify-between py-1">
             <h3 class="text-sm">Do more cards</h3>
             <svg

@@ -45,7 +45,7 @@
       id="menu"
       class="flex sm:w-full md:w-1/2 items-center justify-center">
       <nuxt-link
-        v-for="(item, key) in menuItems"
+        v-for="(item, key) in filteredNavItems"
         :key="key"
         :to="item.link"
         :exact-active-class="darkMode ? 'bg-blue-dark' : 'bg-primary-light'"
@@ -91,7 +91,7 @@ export default {
       darkMode: this.$store.state.darkMode,
       menuItems: [
         { name: 'Home', icon: 'fas fa-home', link: '/' },
-        { name: 'Users', icon: 'fas fa-users', link: '/users' },
+        { name: 'Tasks', icon: 'fas fa-tasks', link: '/tasks' },
         { name: 'Elements', icon: 'fas fa-th', link: '/elements' },
         { name: 'Crypto', icon: 'fab fa-bitcoin', link: '/crypto' },
         { name: 'Settings', icon: 'fas fa-cog', link: '/settings', restricted: true },
@@ -99,9 +99,16 @@ export default {
       ]
     }
   },
-  computed: mapState([
-    'userProfile'
-  ]),
+  computed: {
+    ...mapState([
+      'userProfile'
+    ]),
+    filteredNavItems: function () {
+      return this.userProfile
+        ? this.menuItems
+        : this.menuItems.filter(i => !i.restricted)
+    }
+  },
   methods: {
     toggleDarkMode() {
       this.darkMode = !this.darkMode

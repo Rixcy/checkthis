@@ -2,13 +2,23 @@
   <main-content>
     <div
       slot="top"
-      class="hidden bg-blue-dark md:block md:bg-white md:border-b">
+      class="md:block bg-white border-b">
       <div class="container mx-auto px-4">
         <div class="md:flex">
           <div class="flex -mb-px mr-8">
             <a
-              href="#"
-              class="no-underline text-white md:text-blue-dark flex items-center py-4 border-b border-blue-dark">
+              :class="[
+                'no-underline',
+                'flex',
+                'items-center',
+                'py-4',
+                'border-b',
+                { 'text-blue-dark': darkMode },
+                { 'text-primary-dark': !darkMode },
+                { 'border-blue-dark': darkMode },
+                { 'border-primary-dark': !darkMode },
+              ]"
+              href="#">
               <svg
                 class="h-6 w-6 fill-current mr-2"
                 xmlns="http://www.w3.org/2000/svg"
@@ -82,24 +92,40 @@
       <div class="bg-white border-t border-b sm:border-l sm:border-r sm:rounded shadow mb-6">
         <div class="border-b px-6">
           <div class="flex justify-between -mb-px">
-            <div class="lg:hidden text-blue-dark py-4 text-lg">
+            <div
+              :class="[
+                'lg:hidden',
+                { 'text-blue-dark': darkMode },
+                { 'text-primary-dark': darkMode },
+                'py-4',
+                'text-lg',
+            ]">
               Price Charts
             </div>
             <div class="hidden lg:flex">
               <button
-                type="button"
-                class="appearance-none py-4 text-blue-dark border-b border-blue-dark mr-6">
-                Bitcoin &middot; CA$21,404.74
+                :class="[
+                  'appearance-none',
+                  'py-4',
+                  { 'text-blue-dark': darkMode },
+                  { 'text-primary-dark': !darkMode },
+                  'border-b',
+                  { 'border-blue-dark': darkMode },
+                  { 'border-primary-dark': !darkMode },
+                  'mr-6',
+                ]"
+                type="button">
+                Bitcoin &middot; £21,404.74
               </button>
               <button
                 type="button"
                 class="appearance-none py-4 text-grey-dark border-b border-transparent hover:border-grey-dark mr-6">
-                Ethereum &middot; CA$884.80
+                Ethereum &middot; £884.80
               </button>
               <button
                 type="button"
                 class="appearance-none py-4 text-grey-dark border-b border-transparent hover:border-grey-dark">
-                Litecoin &middot; CA$358.24
+                Litecoin &middot; £358.24
               </button>
             </div>
             <div class="flex text-sm">
@@ -119,8 +145,17 @@
                 1W
               </button>
               <button
-                type="button"
-                class="appearance-none py-4 text-blue-dark border-b border-blue-dark mr-3">
+                :class="[
+                  'appearance-none',
+                  'py-4',
+                  { 'text-blue-dark': darkMode },
+                  { 'text-primary-dark': !darkMode },
+                  'border-b',
+                  { 'border-blue-dark': darkMode },
+                  { 'border-primary-dark': !darkMode },
+                  'mr-3',
+                ]"
+                type="button">
                 1M
               </button>
               <button
@@ -139,12 +174,12 @@
         <div class="flex items-center px-6 lg:hidden">
           <div class="flex-grow flex-no-shrink py-6">
             <div class="text-grey-darker mb-2">
-              <span class="text-3xl align-top">CA$</span>
+              <span class="text-3xl align-top">£</span>
               <span class="text-5xl">21,404</span>
               <span class="text-3xl align-top">.74</span>
             </div>
             <div class="text-green-light text-sm">
-              &uarr; CA$12,955.35 (154.16%)
+              &uarr; £12,955.35 (154.16%)
             </div>
           </div>
           <div class="flex-shrink w-32 inline-block relative">
@@ -165,7 +200,7 @@
           <div class="w-1/3 text-center py-8">
             <div class="border-r">
               <div class="text-grey-darker mb-2">
-                <span class="text-3xl align-top">CA$</span>
+                <span class="text-3xl align-top">£</span>
                 <span class="text-5xl">21,404</span>
                 <span class="text-3xl align-top">.74</span>
               </div>
@@ -177,7 +212,7 @@
           <div class="w-1/3 text-center py-8">
             <div class="border-r">
               <div class="text-grey-darker mb-2">
-                <span class="text-3xl align-top"><span class="text-green align-top">+</span>CA$</span>
+                <span class="text-3xl align-top"><span class="text-green align-top">+</span>£</span>
                 <span class="text-5xl">12,998</span>
                 <span class="text-3xl align-top">.48</span>
               </div>
@@ -205,11 +240,27 @@
           <div class="flex-grow flex flex-col bg-white border-t border-b sm:rounded sm:border shadow overflow-hidden">
             <div class="border-b">
               <div class="flex justify-between px-6 -mb-px">
-                <h3 class="text-blue-dark py-4 font-normal text-lg">Your Portfolio</h3>
+                <h3
+                  :class="[
+                    { 'text-blue-dark': darkMode },
+                    { 'text-primary-dark': !darkMode },
+                    'py-4',
+                    'font-normal',
+                    'text-lg',
+                ]">Your Portfolio</h3>
                 <div class="flex">
                   <button
-                    type="button"
-                    class="appearance-none py-4 text-blue-dark border-b border-blue-dark mr-3">
+                    :class="[
+                      'appearance-none',
+                      'py-4',
+                      'border-b',
+                      { 'text-blue-dark': darkMode },
+                      { 'border-blue-dark': darkMode },
+                      { 'text-primary-dark': !darkMode },
+                      { 'border-primary-dark': !darkMode },
+                      'mr-3'
+                    ]"
+                    type="button">
                     List
                   </button>
                   <button
@@ -242,7 +293,7 @@
                 </div>
                 <div class="w-1/2 px-4">
                   <div class="text-right text-grey">
-                    CA$21.28
+                    £21.28
                   </div>
                 </div>
               </div>
@@ -269,7 +320,7 @@
                 </div>
                 <div class="w-1/2 px-4">
                   <div class="text-right text-grey">
-                    CA$0.00
+                    £0.00
                   </div>
                 </div>
               </div>
@@ -296,14 +347,14 @@
                 </div>
                 <div class="w-1/2 px-4">
                   <div class="text-right text-grey">
-                    CA$0.00
+                    £0.00
                   </div>
                 </div>
               </div>
             </div>
             <div class="px-6 py-4">
               <div class="text-center text-grey">
-                Total Balance &asymp; CA$21.28
+                Total Balance &asymp; £21.28
               </div>
             </div>
           </div>
@@ -312,7 +363,13 @@
           <div class="bg-white border-t border-b sm:rounded sm:border shadow">
             <div class="border-b">
               <div class="flex justify-between px-6 -mb-px">
-                <h3 class="text-blue-dark py-4 font-normal text-lg">Recent Activity</h3>
+                <h3
+                  :class="[
+
+                    'py-4',
+                    'font-normal',
+                    'text-lg',
+                ]">Recent Activity</h3>
               </div>
             </div>
             <div>
@@ -328,8 +385,20 @@
                   <p class="text-grey max-w-xs mx-auto mb-6">You've successfully linked a payment method and can start buying digital currency.</p>
                   <div>
                     <button
-                      type="button"
-                      class="bg-blue hover:bg-blue-dark text-white border border-blue-dark rounded px-6 py-4">Buy now</button>
+                      :class="[
+                        { 'bg-blue': darkMode },
+                        { 'bg-primary': !darkMode },
+                        { 'hover:bg-blue-dark': darkMode },
+                        { 'hover:bg-primary-dark': !darkMode },
+                        'text-white',
+                        'border',
+                        { 'border-blue-dark': darkMode },
+                        { 'border-primary-dark': !darkMode },
+                        'rounded',
+                        'px-6',
+                        'py-4',
+                      ]"
+                      type="button">Buy now</button>
                   </div>
                 </div>
               </div>
@@ -342,10 +411,11 @@
 </template>
 
 <script>
+import { mapState } from 'vuex'
+
 export default {
-  data: function () {
-    return {}
-  },
-  methods: {}
+  computed: mapState([
+    'darkMode'
+  ])
 }
 </script>

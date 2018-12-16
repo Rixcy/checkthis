@@ -9,7 +9,7 @@
             </div>
             <div class="flex-1 text-right md:text-center">
               <h5 class="uppercase text-grey-dark">Total Revenue</h5>
-              <h3 class="text-3xl">$3249 <span class="text-grey"><i class="fas fa-caret-up"/></span></h3>
+              <h3 class="text-3xl">£3249 <span class="text-grey"><i class="fas fa-caret-up"/></span></h3>
             </div>
           </div>
         </div>
@@ -81,8 +81,36 @@
       </div>
     </div>
 
-
     <div class="flex flex-row flex-wrap flex-grow mt-2">
+      <div class="w-full xl:w-2/3 p-3">
+        <div class="bg-white border-transparent rounded-lg shadow-lg">
+          <div class="bg-grey-light border-b-2 border-grey rounded-tl-lg rounded-tr-lg p-2">
+            <h5 class="uppercase text-grey-dark">Todo List</h5>
+          </div>
+          <div class="p-6">
+            <div class="mb-4">
+              <div class="flex mt-4">
+                <input
+                  class="shadow appearance-none border rounded w-full py-2 px-3 mr-4 text-grey-darker"
+                  placeholder="Add Todo">
+                <button class="flex-no-shrink p-2 border-2 rounded text-teal border-teal hover:text-white hover:bg-teal">Add</button>
+              </div>
+            </div>
+            <div>
+              <div class="flex mb-4 items-center">
+                <p class="w-full text-grey-darkest">Add another component to Tailwind Components</p>
+                <button class="flex-no-shrink p-2 ml-4 mr-2 border-2 rounded hover:text-white text-green border-green hover:bg-green">Done</button>
+                <button class="flex-no-shrink p-2 ml-2 border-2 rounded text-red border-red hover:text-white hover:bg-red">Remove</button>
+              </div>
+              <div class="flex mb-4 items-center">
+                <p class="w-full line-through text-green">Submit Todo App Component to Tailwind Components</p>
+                <button class="flex-no-shrink p-2 ml-4 mr-2 border-2 rounded hover:text-white text-grey border-grey hover:bg-grey">Not Done</button>
+                <button class="flex-no-shrink p-2 ml-2 border-2 rounded text-red border-red hover:text-white hover:bg-red">Remove</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
       <div class="w-full md:w-1/2 xl:w-1/3 p-3">
         <div class="bg-white border-transparent rounded-lg shadow-lg">
           <div class="bg-grey-light uppercase text-grey-darkest border-b-2 border-grey rounded-tl-lg rounded-tr-lg p-2">
@@ -121,37 +149,6 @@
               }]
               }
               }
-              });
-            </script>
-          </div>
-        </div>
-      </div>
-
-      <div class="w-full md:w-1/2 xl:w-1/3 p-3">
-        <div class="bg-white border-transparent rounded-lg shadow-lg">
-          <div class="bg-grey-light border-b-2 border-grey rounded-tl-lg rounded-tr-lg p-2">
-            <h5 class="uppercase text-grey-dark">Graph</h5>
-          </div>
-          <div class="p-5">
-            <canvas
-              id="chartjs-0"
-              class="chartjs"
-              width="undefined"
-              height="undefined"/>
-            <script>
-              new Chart(document.getElementById("chartjs-0"), {
-              "type": "line",
-              "data": {
-              "labels": ["January", "February", "March", "April", "May", "June", "July"],
-              "datasets": [{
-              "label": "Views",
-              "data": [65, 59, 80, 81, 56, 55, 40],
-              "fill": false,
-              "borderColor": "rgb(75, 192, 192)",
-              "lineTension": 0.1
-              }]
-              },
-              "options": {}
               });
             </script>
           </div>
@@ -259,37 +256,6 @@
               </tbody>
             </table>
             <p class="py-2"><a href="#">See More issues...</a></p>
-          </div>
-        </div>
-      </div>
-
-      <div class="w-full md:w-1/2 xl:w-1/3 p-3">
-        <div class="bg-white border-transparent rounded-lg shadow-lg">
-          <div class="bg-grey-light border-b-2 border-grey rounded-tl-lg rounded-tr-lg p-2">
-            <h5 class="uppercase text-grey-dark">Template</h5>
-          </div>
-          <div class="p-5">
-            <h3 class="font-semibold text-xl mb-4">Switches</h3>
-            <div class="flex justify-around">
-              <span class="border rounded-full border-grey flex items-center cursor-pointer w-12 bg-blue justify-end">
-                <span class="rounded-full border w-6 h-6 border-grey shadow-inner bg-white shadow"/>
-              </span>
-              <span class="border rounded-full border-grey flex items-center cursor-pointer w-12 justify-start">
-                <span class="rounded-full border w-6 h-6 border-grey shadow-inner bg-white shadow"/>
-              </span>
-            </div>
-            <br>
-            <h3 class="font-semibold text-xl mb-4">Calendar</h3>
-            <div class="flex justify-center">
-              <div class="block rounded-t overflow-hidden bg-white text-center w-24">
-                <div class="bg-blue text-white py-1">
-                  August
-                </div>
-                <div class="pt-1 pb-4 px-2 border-l border-r border-b rounded-b">
-                  <span class="text-4xl font-bold">1</span>
-                </div>
-              </div>
-            </div>
           </div>
         </div>
       </div>

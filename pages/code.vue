@@ -1,5 +1,45 @@
 <template>
   <main-content>
+    <div class="p-4 shadow-md">
+      <input
+        v-model="text"
+        type="text"
+        class="shadow appearance-none border rounded w-full py-2 px-3 text-grey-darker mb-3 leading-tight focus:outline-none focus:shadow-outline">
+      <button
+        :class="[
+          'border-2',
+          'border-green',
+          'hover:text-white',
+          'text-xs',
+          'font-bold',
+          'py-2',
+          'px-4',
+          'rounded',
+          'focus:outline-none',
+          { 'bg-green-dark' : splitActive },
+          { 'text-white': splitActive },
+          { 'text-green': !splitActive },
+          { 'hover:bg-green': !splitActive }
+        ]"
+        @click="toggleActive('split')">Split Class</button>
+      <button
+        :class="[
+          'border-2',
+          'border-blue',
+          'hover:text-white',
+          'text-xs',
+          'font-bold',
+          'py-2',
+          'px-4',
+          'rounded',
+          'focus:outline-none',
+          { 'bg-blue-dark' : darkActive },
+          { 'text-white': darkActive },
+          { 'text-blue': !darkActive },
+          { 'hover:bg-blue': !darkActive }
+        ]"
+        @click="toggleActive('dark')">Dark Mode</button>
+    </div>
     <div id="editor"/>
   </main-content>
 </template>
@@ -12,28 +52,63 @@ require('brace/theme/monokai')
 export default {
   data: function () {
     return {
+      splitActive: false,
+      darkActive: false,
+      text: '',
       editor: Object,
       beforeContent: '',
-      initialCode: "// pass options to ace.edit\n" +
-        "ace.edit(element, {\n" +
-        "  mode: \"ace/mode/javascript\",\n" +
-        "  selectionStyle: \"text\"\n" +
-        "})\n\n" +
-        "// use setOptions method to set several options at once\n" +
-        "editor.setOptions({\n" +
-        "  autoScrollEditorIntoView: true,\n" +
-        "  copyWithEmptySelection: true,\n" +
-        "})\n\n" +
-        "// use setOptions method" +
-        "editor.setOption(\"mergeUndoDeltas\", \"always\");\n" +
-        "// some options are also available as methods e.g.\n" +
-        "editor.setTheme(...)\n\n" +
-        "// to get the value of the option use\n" +
-        "editor.getOption(\"optionName\")"
+      initialCode: `// pass options to ace.edit
+ace.edit(element, {
+  mode: "ace/mode/javascript",
+  selectionStyle: "text"
+})
+
+// use setOptions method to set several options at once
+editor.setOptions({
+  autoScrollEditorIntoView: true,
+  copyWithEmptySelection: true,
+})
+
+// use setOptions method
+editor.setOption("mergeUndoDeltas", "always");
+
+// some options are also available as methods e.g.
+editor.setTheme(...)
+
+// to get the value of the option use
+editor.getOption("optionName")`
+    }
+  },
+  computed: {
+    splitClass() {
+      if (this.text.length < 1 || !this.splitActive) return
+      const a = this.text.split('"')
+      if (a.length > 1) {
+        const b = a[1].split(" ")
+        let c = ""
+        for (let i = 0; i < b.length; i++) {
+          c += `\n  '${b[i]}',`
+        }
+        c = `:class="[${c}\n]"`
+        return c
+      }
+    },
+    darkMode() {
+      if (this.text.length < 1 || !this.darkActive) return
+      const a = this.text.split("'")
+      if (a.length > 1) {
+        let b = `{ '${a[1]}': darkMode },\n{ '${a[1]}': !darkMode },`
+        return b
+      }
     }
   },
   watch: {
-    'content' (value) {
+    splitClass: function (value) {
+      if (this.beforeContent !== value) {
+        this.editor.setValue(value, 1)
+      }
+    },
+    darkMode: function (value) {
       if (this.beforeContent !== value) {
         this.editor.setValue(value, 1)
       }
@@ -44,7 +119,6 @@ export default {
     const theme = 'monokai'
     this.editor = ace.edit("editor")
     this.editor.setOptions({
-      autoScrollEditorIntoView: true,
       maxLines: 50,
       minLines: 20
     });
@@ -58,6 +132,19 @@ export default {
       this.beforeContent = this.editor.getValue()
       this.$emit('change-content', this.editor.getValue())
     })
-  }
+  },
+  methods: {
+    toggleActive(el) {
+      if (el == 'dark') {
+        this.text = ''
+        this.splitActive = false
+        this.darkActive = !this.darkActive
+      } else if (el == 'split') {
+        this.text = ''
+        this.darkActive = false
+        this.splitActive = !this.splitActive
+      }
+    }
+  },
 }
 </script>
