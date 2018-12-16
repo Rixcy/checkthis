@@ -81,11 +81,8 @@
       </div>
     </div>
 
-
     <div class="flex flex-row flex-wrap flex-grow mt-2">
-
       <div class="w-full md:w-1/2 xl:w-1/3 p-3">
-        <!--Graph Card-->
         <div class="bg-white border-transparent rounded-lg shadow-lg">
           <div class="bg-grey-light uppercase text-grey-darkest border-b-2 border-grey rounded-tl-lg rounded-tr-lg p-2">
             <h5 class="uppercase text-grey-dark">Graph</h5>
@@ -127,11 +124,9 @@
             </script>
           </div>
         </div>
-        <!--/Graph Card-->
       </div>
 
       <div class="w-full md:w-1/2 xl:w-1/3 p-3">
-        <!--Graph Card-->
         <div class="bg-white border-transparent rounded-lg shadow-lg">
           <div class="bg-grey-light border-b-2 border-grey rounded-tl-lg rounded-tr-lg p-2">
             <h5 class="uppercase text-grey-dark">Graph</h5>
@@ -160,11 +155,9 @@
             </script>
           </div>
         </div>
-        <!--/Graph Card-->
       </div>
 
       <div class="w-full md:w-1/2 xl:w-1/3 p-3">
-        <!--Graph Card-->
         <div class="bg-white border-transparent rounded-lg shadow-lg">
           <div class="bg-grey-light border-b-2 border-grey rounded-tl-lg rounded-tr-lg p-2">
             <h5 class="uppercase text-grey-dark">Graph</h5>
@@ -202,11 +195,9 @@
             </script>
           </div>
         </div>
-        <!--/Graph Card-->
       </div>
 
       <div class="w-full md:w-1/2 xl:w-1/3 p-3">
-        <!--Graph Card-->
         <div class="bg-white border-transparent rounded-lg shadow-lg">
           <div class="bg-grey-light border-b-2 border-grey rounded-tl-lg rounded-tr-lg p-2">
             <h5 class="uppercase text-grey-dark">Graph</h5>
@@ -231,11 +222,9 @@
             </script>
           </div>
         </div>
-        <!--/Graph Card-->
       </div>
 
       <div class="w-full md:w-1/2 xl:w-1/3 p-3">
-        <!--Table Card-->
         <div class="bg-white border-transparent rounded-lg shadow-lg">
           <div class="bg-grey-light border-b-2 border-grey rounded-tl-lg rounded-tr-lg p-2">
             <h5 class="uppercase text-grey-dark">Table</h5>
@@ -268,16 +257,12 @@
                 </tr>
               </tbody>
             </table>
-
             <p class="py-2"><a href="#">See More issues...</a></p>
-
           </div>
         </div>
-        <!--/table Card-->
       </div>
 
       <div class="w-full md:w-1/2 xl:w-1/3 p-3">
-        <!--Template Card-->
         <div class="bg-white border-transparent rounded-lg shadow-lg">
           <div class="bg-grey-light border-b-2 border-grey rounded-tl-lg rounded-tr-lg p-2">
             <h5 class="uppercase text-grey-dark">Template</h5>
@@ -306,7 +291,6 @@
             </div>
           </div>
         </div>
-        <!--/Template Card-->
       </div>
     </div>
   </main-content>

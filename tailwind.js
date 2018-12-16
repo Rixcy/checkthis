@@ -5,11 +5,6 @@ Tailwind - The Utility-First CSS Framework
 A project by Adam Wathan (@adamwathan), Jonathan Reinink (@reinink),
 David Hemphill (@davidhemphill) and Steve Schoger (@steveschoger).
 
-Welcome to the Tailwind config file. This is where you can customize
-Tailwind specifically for your project. Don't be intimidated by the
-length of this file. It's really just a big JavaScript object and
-we've done our very best to explain each section.
-
 View the full documentation at https://tailwindcss.com.
 
 
@@ -26,22 +21,6 @@ View the full documentation at https://tailwindcss.com.
 
 // let defaultConfig = require('tailwindcss/defaultConfig')()
 
-
-/*
-|-------------------------------------------------------------------------------
-| Colors                                    https://tailwindcss.com/docs/colors
-|-------------------------------------------------------------------------------
-|
-| Here you can specify the colors used in your project. To get you started,
-| we've provided a generous palette of great looking colors that are perfect
-| for prototyping, but don't hesitate to change them for your project. You
-| own these colors, nothing will break if you change everything about them.
-|
-| We've used literal color names ("red", "blue", etc.) for the default
-| palette, but if you'd rather use functional names like "primary" and
-| "secondary", or even a numeric scale like "100" and "200", go for it.
-|
-*/
 
 let colors = {
   'transparent': 'transparent',

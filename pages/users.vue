@@ -15,6 +15,9 @@ import { mapState } from 'vuex'
 export default {
   computed: mapState([
     'users'
-  ])
+  ]),
+  middleware: [
+    'authenticated'
+  ],
 }
 </script>

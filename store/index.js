@@ -4,7 +4,7 @@ import firebase, {auth, GoogleProvider, usersCollection} from '@/services/firein
 const createStore = () => {
   return new Vuex.Store({
     state: () => ({
-      darkMode: true,
+      darkMode: false,
       user: null,
       userProfile: null,
       users: null,

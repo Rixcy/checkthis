@@ -94,7 +94,8 @@ export default {
         { name: 'Users', icon: 'fas fa-users', link: '/users' },
         { name: 'Elements', icon: 'fas fa-th', link: '/elements' },
         { name: 'Crypto', icon: 'fab fa-bitcoin', link: '/crypto' },
-        { name: 'Settings', icon: 'fas fa-cog', link: '/settings' }
+        { name: 'Settings', icon: 'fas fa-cog', link: '/settings' },
+        { name: 'Code', icon: 'fas fa-code', link: '/code' }
       ]
     }
   },

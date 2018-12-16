@@ -31,7 +31,7 @@
             v-for="(variant, key) in colour.variant"
             :key="key"
             :class="[
-              `text-${lightColours.includes(key) ? 'white' : colour.base + '-' + colour.reversedVariant[key]}`,
+              `text-${lightColours.includes(key) || variant == 'base' ? 'white' : colour.base + '-' + colour.reversedVariant[key]}`,
               `bg-${variant == 'white' || variant == 'black' ? variant : colour.base}${variant == 'base' || variant == 'white' || variant == 'black' ? '' : '-' + variant}`,
               'px-3',
               'py-4',
@@ -84,7 +84,7 @@ const variantsReversed = {
 export default {
   data() {
     return {
-      lightColours: _.range(5),
+      lightColours: _.range(4),
       colours: [
         {
           base: 'primary',

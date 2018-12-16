@@ -222,7 +222,7 @@
             </div>
             <div class="flex-grow flex px-6 py-6 text-grey-darker items-center border-b -mx-4">
               <div class="w-2/5 xl:w-1/4 px-4 flex items-center">
-                <div class="rounded-full bg-orange inline-flex mr-3">
+                <div class="rounded-full bg-grey inline-flex mr-3">
                   <svg
                     class="fill-current text-white h-8 w-8 block"
                     xmlns="http://www.w3.org/2000/svg"
@@ -276,7 +276,7 @@
             </div>
             <div class="flex-grow flex px-6 py-6 text-grey-darker items-center border-b -mx-4">
               <div class="w-2/5 xl:w-1/4 px-4 flex items-center">
-                <div class="rounded-full bg-indigo inline-flex mr-3">
+                <div class="rounded-full bg-grey inline-flex mr-3">
                   <svg
                     class="fill-current text-white h-8 w-8 block"
                     xmlns="http://www.w3.org/2000/svg"

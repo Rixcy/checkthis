@@ -1,7 +1,7 @@
 <template>
-  <div id="settings">
+  <main-content>
     Settings
-  </div>
+  </main-content>
 </template>
 
 <script>
