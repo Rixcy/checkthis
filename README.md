@@ -1,5 +1,7 @@
 # checkthis
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/91d8701b-5ee9-4eff-8ce2-337a800cf4c3/deploy-status)](https://app.netlify.com/sites/musing-elion-3e81c0/deploys)
+
 > My kickass Nuxt.js project
 
 ## Build Setup
